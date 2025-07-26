@@ -128,6 +128,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 window.addEventListener('load', () => {
   // Small delay to ensure audio context is ready
   setTimeout(() => {
-    console.log('Network Request Audio Feedback extension loaded');
-  }, 200);
+    console.log('Windchime extension loaded');
+  }, 1000);
 });
