@@ -57,11 +57,6 @@ class AudioToneGenerator {
       if (!this.audioContext) return;
     }
     
-    // Resume audio context if suspended (required by some browsers)
-    if (this.audioContext.state === 'suspended') {
-      this.audioContext.resume();
-    }
-    
     const oscillator = this.audioContext.createOscillator();
     const gainNode = this.audioContext.createGain();
     
@@ -81,6 +76,11 @@ class AudioToneGenerator {
     gainNode.gain.linearRampToValueAtTime(volume, now + fadeTime);
     gainNode.gain.linearRampToValueAtTime(volume, now + duration/1000 - fadeTime);
     gainNode.gain.linearRampToValueAtTime(0, now + duration/1000);
+    
+    // Resume audio context if suspended (required by some browsers)
+    if (this.audioContext.state === 'suspended') {
+      this.audioContext.resume();
+    }
     
     // Play the tone
     oscillator.start(now);
