@@ -1,6 +1,6 @@
-# Network Request Audio Feedback Chrome Extension
+# Windchime - A Network Request Audio Feedback Chrome Extension
 
-A Chrome extension that plays audio tones for every network request loaded on the current page. The audio tone frequency and duration correspond to the size of the request body - small files play high-pitched short tones, while large files play low-pitched longer tones.
+Windchime is a proof of concept Chrome extension that plays audio tones for every network request loaded on the current page. The audio tone frequency and duration correspond to the size of the request body - small files play high-pitched short tones, while large files play low-pitched longer tones. My hope here was to better understand what pages I visit are doing behind the scenes while I'm not actively watching the network traffic.
 
 ## Features
 
