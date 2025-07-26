@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      margin: 0;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .header h1 {
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    
+    .header p {
+      margin: 0;
+      font-size: 12px;
+      opacity: 0.8;
+    }
+    
+    .control-section {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    
+    .toggle-label {
+      font-weight: 500;
+      font-size: 14px;
+    }
+    
+    .toggle-switch {
+      position: relative;
+      width: 50px;
+      height: 24px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .toggle-switch.active {
+      background: #4CAF50;
+    }
+    
+    .toggle-slider {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.3s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .toggle-switch.active .toggle-slider {
+      transform: translateX(26px);
+    }
+    
+    .info-section {
+      font-size: 12px;
+      line-height: 1.4;
+      opacity: 0.9;
+    }
+    
+    .info-section h3 {
+      margin: 0 0 8px 0;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    
+    .info-section ul {
+      margin: 0;
+      padding-left: 15px;
+    }
+    
+    .info-section li {
+      margin-bottom: 4px;
+    }
+    
+    .test-section {
+      text-align: center;
+    }
+    
+    .test-button {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: all 0.3s;
+      margin: 0 4px;
+    }
+    
+    .test-button:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+    
+    .status {
+      text-align: center;
+      font-size: 11px;
+      margin-top: 10px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🎵 Network Audio Feedback</h1>
+    <p>Audio tones for network requests</p>
+  </div>
+  
+  <div class="control-section">
+    <div class="toggle-container">
+      <span class="toggle-label">Enable Audio</span>
+      <div class="toggle-switch" id="toggleSwitch">
+        <div class="toggle-slider"></div>
+      </div>
+    </div>
+    
+    <div class="test-section">
+      <button class="test-button" id="testSmall">Test Small</button>
+      <button class="test-button" id="testMedium">Test Medium</button>
+      <button class="test-button" id="testLarge">Test Large</button>
+    </div>
+  </div>
+  
+  <div class="control-section">
+    <div class="info-section">
+      <h3>How it works:</h3>
+      <ul>
+        <li><strong>Small files:</strong> High pitch, short duration</li>
+        <li><strong>Medium files:</strong> Medium pitch, medium duration</li>
+        <li><strong>Large files:</strong> Low pitch, long duration</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="status" id="status">
+    Loading...
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
