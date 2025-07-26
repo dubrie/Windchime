@@ -2,9 +2,11 @@
 document.addEventListener('DOMContentLoaded', function() {
   const toggleSwitch = document.getElementById('toggleSwitch');
   const statusElement = document.getElementById('status');
+  const testTinyBtn = document.getElementById('testTiny');
   const testSmallBtn = document.getElementById('testSmall');
   const testMediumBtn = document.getElementById('testMedium');
   const testLargeBtn = document.getElementById('testLarge');
+  const testXLargeBtn = document.getElementById('testXLarge');
   
   // Audio context for test tones
   let audioContext;
@@ -93,8 +95,16 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Test button event listeners
+  testTinyBtn.addEventListener('click', function() {
+    // Simulate tiny file (1KB) - high pitch, short duration
+    playTestTone(1500, 40, 0.05);
+    this.style.transform = 'scale(0.95)';
+    setTimeout(() => this.style.transform = '', 60);
+  });
+  
+  // Test button event listeners
   testSmallBtn.addEventListener('click', function() {
-    // Simulate small file (1KB) - high pitch, short duration
+    // Simulate small file (5KB) - high pitch, short duration
     playTestTone(700, 80, 0.08);
     this.style.transform = 'scale(0.95)';
     setTimeout(() => this.style.transform = '', 100);
@@ -112,6 +122,13 @@ document.addEventListener('DOMContentLoaded', function() {
     playTestTone(150, 250, 0.15);
     this.style.transform = 'scale(0.95)';
     setTimeout(() => this.style.transform = '', 250);
+  });
+  
+  testXLargeBtn.addEventListener('click', function() {
+    // Simulate Xlarge file (1500KB) - low pitch, long duration
+    playTestTone(100, 400, 0.18);
+    this.style.transform = 'scale(0.95)';
+    setTimeout(() => this.style.transform = '', 400);
   });
   
   // Handle user gesture requirement for audio
