@@ -16,16 +16,18 @@ class AudioToneGenerator {
   // Map file size to frequency (Hz)
   sizeToFrequency(sizeBytes) {
     // Define size ranges and corresponding frequencies
-    // Small files (0-10KB): 800-400 Hz (higher pitch)
-    // Medium files (10KB-100KB): 400-200 Hz (medium pitch)  
-    // Large files (100KB+): 200-100 Hz (lower pitch)
+    // Tiny files (0-5KB): 5000-1000 Hz (high pitch)
+    // Small files (5Kb-10KB): 1000-500 Hz (higher pitch)
+    // Medium files (10KB-100KB): 500-300 Hz (medium pitch)  
+    // Large files (100-1000KB): 300-200 Hz (lower pitch)
+    // Extra Large files (1000KB+): 200-100 Hz (low pitch)
     
     const minFreq = 100;  // Lowest frequency for very large files
-    const maxFreq = 800;  // Highest frequency for very small files
+    const maxFreq = 5000;  // Highest frequency for very small files
     
     // Use logarithmic scale for better distribution
     const logSize = Math.log(Math.max(sizeBytes, 1));
-    const maxLogSize = Math.log(1000000); // 1MB as reference point
+    const maxLogSize = Math.log(3000000); // 3MB as reference point
     
     // Invert the relationship: smaller files = higher frequency
     const normalizedSize = Math.min(logSize / maxLogSize, 1);
@@ -37,11 +39,11 @@ class AudioToneGenerator {
   // Map file size to duration (ms)
   sizeToDuration(sizeBytes) {
     // Smaller files = shorter duration, larger files = longer duration
-    const minDuration = 50;   // 50ms for very small files
-    const maxDuration = 300;  // 300ms for very large files
+    const minDuration = 40;   // 50ms for very small files
+    const maxDuration = 500;  // 300ms for very large files
     
     const logSize = Math.log(Math.max(sizeBytes, 1));
-    const maxLogSize = Math.log(1000000); // 1MB as reference
+    const maxLogSize = Math.log(3000000); // 3MB as reference
     
     const normalizedSize = Math.min(logSize / maxLogSize, 1);
     const duration = minDuration + (normalizedSize * (maxDuration - minDuration));
@@ -127,5 +129,5 @@ window.addEventListener('load', () => {
   // Small delay to ensure audio context is ready
   setTimeout(() => {
     console.log('Network Request Audio Feedback extension loaded');
-  }, 1000);
+  }, 200);
 });
