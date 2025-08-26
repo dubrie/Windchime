@@ -79,7 +79,9 @@ class AudioToneGenerator {
     
     // Resume audio context if suspended (required by some browsers)
     if (this.audioContext.state === 'suspended') {
-      this.audioContext.resume();
+      this.audioContext.resume().then(() => {
+        console.log('AudioContext resumed');
+      });
     }
     
     // Play the tone
