@@ -100,6 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
     playTestTone(1500, 40, 0.05);
     this.style.transform = 'scale(0.95)';
     setTimeout(() => this.style.transform = '', 60);
+    console.log(`Playing Tiny test tone: 1500Hz, 40ms`);
+
   });
   
   // Test button event listeners
@@ -108,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
     playTestTone(700, 80, 0.08);
     this.style.transform = 'scale(0.95)';
     setTimeout(() => this.style.transform = '', 100);
+    console.log(`Playing Small test tone: 700Hz, 80ms`);
   });
   
   testMediumBtn.addEventListener('click', function() {
@@ -115,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
     playTestTone(350, 150, 0.12);
     this.style.transform = 'scale(0.95)';
     setTimeout(() => this.style.transform = '', 150);
+    console.log(`Playing Medium test tone: 350Hz, 150ms`);
   });
   
   testLargeBtn.addEventListener('click', function() {
@@ -122,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
     playTestTone(150, 250, 0.15);
     this.style.transform = 'scale(0.95)';
     setTimeout(() => this.style.transform = '', 250);
+    console.log(`Playing Large test tone: 150Hz, 250ms`);
   });
   
   testXLargeBtn.addEventListener('click', function() {
@@ -129,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
     playTestTone(100, 400, 0.18);
     this.style.transform = 'scale(0.95)';
     setTimeout(() => this.style.transform = '', 400);
+    console.log(`Playing X-Large test tone: 100Hz, 400ms`);
   });
   
   // Handle user gesture requirement for audio
