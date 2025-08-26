@@ -16,7 +16,7 @@ class AudioToneGenerator {
   // Map file size to frequency (Hz)
   sizeToFrequency(sizeBytes) {
     // Define size ranges and corresponding frequencies
-    // Tiny files (0-5KB): 5000-1000 Hz (high pitch)
+    // Tiny files (0-5KB): 1500-1000 Hz (high pitch)
     // Small files (5Kb-10KB): 1000-500 Hz (higher pitch)
     // Medium files (10KB-100KB): 500-300 Hz (medium pitch)  
     // Large files (100-1000KB): 300-200 Hz (lower pitch)
