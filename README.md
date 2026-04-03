@@ -2,6 +2,8 @@
 
 Windchime is a proof of concept Chrome extension that plays audio tones for every network request loaded on the current page. The audio tone frequency and duration correspond to the size of the request body - small files play high-pitched short tones, while large files play low-pitched longer tones. My hope here was to better understand what pages I visit are doing behind the scenes while I'm not actively watching the network traffic.
 
+<img width="357" height="491" alt="windchime-screenshot" src="https://github.com/user-attachments/assets/085e0f8c-8670-4c95-a7c1-f70ddf4245ca" />
+
 ## Features
 
 - 🎵 **Audio feedback** for network requests based on file size
